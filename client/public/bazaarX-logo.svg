@@ -1,0 +1,54 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Rainbow + Vegetable Green Gradient -->
+    <linearGradient id="bxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16a34a"/>   <!-- fresh green -->
+      <stop offset="25%" stop-color="#16a34a"/>  <!-- blue -->
+      <stop offset="50%" stop-color="#16a34a"/>  <!-- violet -->
+      <stop offset="75%" stop-color="#16a34a"/>  <!-- orange -->
+      <stop offset="100%" stop-color="#16a34a"/> <!-- deep veg green -->
+    </linearGradient>
+
+    <!-- Soft Glow -->
+    <filter id="softGlow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#22c55e" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Skew + Forward Motion Group -->
+  <g transform="skewX(-15) rotate(-8 110 110)" filter="url(#softGlow)">
+
+    <!-- BX Letters -->
+    <text x="40" y="140"
+          font-family="Poppins, Arial, sans-serif"
+          font-size="90"
+          font-weight="800"
+          font-style="italic"
+          fill="url(#bxGradient)"
+          letter-spacing="2">
+      BX
+    </text>
+
+    <!-- Motion Lines (Upper crossing lines layered) -->
+    <line x1="60" y1="60" x2="170" y2="40"
+          stroke="url(#bxGradient)"
+          stroke-width="5"
+          stroke-linecap="round"
+          opacity="0.9"/>
+
+    <line x1="70" y1="75" x2="180" y2="55"
+          stroke="url(#bxGradient)"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          opacity="0.7"/>
+
+    <line x1="80" y1="90" x2="190" y2="70"
+          stroke="url(#bxGradient)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          opacity="0.5"/>
+
+  </g>
+
+</svg>
