@@ -31,6 +31,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({origin : allowedOrigins, credentials : true}))
 
+app.use((req, res, next) => {
+    res.header('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    next();
+});
+
 app.get('/', (req, res) => res.send("API is working "));
 
 app.use('/api/user', userRouter);
