@@ -124,11 +124,11 @@ export const placeOrderStripe = async (req, res) =>{
 
 // Stripe Webhooks to Verify Payments Action : /stripe 
 
-export const stripeWebhooks =  (async (request, response)=>{
+export const stripeWebhooks =  async (request, response)=>{
   // Stripe Gateway initialize
    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
-   const sig = request.headers["strip-signature"];
+   const sig = request.headers["stripe-signature"];
    let event ;
 
    try {
@@ -138,9 +138,9 @@ export const stripeWebhooks =  (async (request, response)=>{
         process.env.STRIPE_WEBHOOK_SECRET
     );
    } catch (error) {
-     response.status(400).send(`Webhook : ${error.message}`)
+    return  response.status(400).send(`Webhook Error : ${error.message}`)
    }
-
+   console.log('Stripe webhook received:', event.type);
    //Handle the event 
    switch (event.type) {
     case "payment_intent.succeeded":{
@@ -154,7 +154,7 @@ export const stripeWebhooks =  (async (request, response)=>{
 
         const {orderId, userId} = session.data[0].metadata;
 
-        // Mark payment ass paid 
+        // Mark payment as paid 
         await Order.findByIdAndUpdate(orderId, {isPaid:true});
 
         //Clear user cart 
@@ -178,13 +178,13 @@ export const stripeWebhooks =  (async (request, response)=>{
        
    
     default:
-        console.log(`Unhandled event type ${event.type}`)
+        console.error(`Unhandled event type ${event.type}`)
         break;
    }
 
    response.json({recieved:true});
 
-})
+}
 
 
 //Get Orders by User ID : /api/order/user
