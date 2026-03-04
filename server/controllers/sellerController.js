@@ -17,7 +17,7 @@ export const sellerLogin = async (req , res) =>{
         const token = jwt.sign({email}, process.env.JWT_SECRET, {expiresIn:'7d'});
         res.cookie('sellerToken',token,{
         httpOnly: true ,
-        secure : process.env.NODE_ENV === 'production',
+        secure :  process.env.NODE_ENV === 'production' || true,
         sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
        });
@@ -54,7 +54,7 @@ export const sellerLogout = async (req, res)=>{
 
        res.clearCookie('sellerToken', {
         httpOnly: true ,
-        secure : process.env.NODE_ENV === 'production',
+        secure : process.env.NODE_ENV === 'production' || true,
         sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
        });
        return res.json ({success: true, message : "Logged Out."});
