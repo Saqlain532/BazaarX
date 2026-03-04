@@ -14,7 +14,6 @@ const sellerLogin = () => {
             event.preventDefault();
             const {data} = await axios.post('/api/seller/login', {email, password});
             if(data.success){
-                localStorage.setItem('sellerToken', data.sellerToken);
                 setIsSeller(true)
                 navigate('/seller')
             }
