@@ -32,7 +32,7 @@ import toast from 'react-hot-toast';
     }, [searchQuery])
 
   return (
-    <nav className="flex items-center justify-between px-6   md:px-16 lg:px-24 xl:px-10 py-4 border-b border-gray-300 bg-white text-black transition-all">
+    <nav className="flex items-center justify-between px-6 relative z-50  md:px-16 lg:px-24 xl:px-10 py-4 border-b border-gray-300 bg-white text-black transition-all">
 
             <NavLink to='/' onClick={()=>setOpen(false)}>
                    {/* <img  className='w-40 h-20  bg-primary rounded-2xl '  src={assets.BazaarX} alt="logo" /> */}
@@ -93,7 +93,7 @@ import toast from 'react-hot-toast';
             
             {/* Mobile Menu */}
             {(open &&
-            <div className={`${open ? 'flex' : 'hidden'} absolute top-15 left-0 w-full bg-primary/10 shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}>
+            <div className={`${open ? 'flex' : 'hidden'} absolute top-full left-0 w-full  shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden z-50 bg-white`}>
                 <NavLink to='/' onClick={ ()=>{ setOpen(false)}} >Home</NavLink>
                 <NavLink   to='/products' onClick={ ()=>{ setOpen(false)}}>All product</NavLink>
                 {
