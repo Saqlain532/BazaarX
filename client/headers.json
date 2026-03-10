@@ -1,0 +1,34 @@
+{
+  "OPTIONS": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-headers": "authorization, x-client-info, apikey, content-type",
+    "access-control-allow-methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "access-control-allow-origin": "https://bazaar-x-frontend-gold.vercel.app",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "date": "Tue, 10 Mar 2026 12:18:13 GMT",
+    "server": "Vercel",
+    "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+    "vary": "Origin, Access-Control-Request-Headers",
+    "x-powered-by": "Express",
+    "x-vercel-cache": "MISS",
+    "x-vercel-id": "bom1::iad1::kxwxd-1773145093598-ee59da445d74"
+  },
+  "GET": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization",
+    "access-control-allow-methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+    "access-control-allow-origin": "https://bazaar-x-frontend-gold.vercel.app",
+    "age": "0",
+    "cache-control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+    "content-length": "44",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Tue, 10 Mar 2026 12:18:14 GMT",
+    "etag": "W/\"2c-Xeqp2dxepyPU9jO0nEo6NHHnLAw\"",
+    "server": "Vercel",
+    "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+    "vary": "Origin",
+    "x-powered-by": "Express",
+    "x-vercel-cache": "MISS",
+    "x-vercel-id": "bom1::iad1::rgfqf-1773145093997-17d119ac498e"
+  }
+}
