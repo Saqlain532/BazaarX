@@ -3,7 +3,7 @@ import { assets, footerLinks } from '../assets/assets';
 import BazaarXLogo from '../assets/BazaarXLogo';
 
 const Footer = () => {
-  
+
 
     return (
         <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-24 bg-primary/10">
@@ -11,7 +11,7 @@ const Footer = () => {
                 <div>
                     {/* <img  src="../src/assets/footerlogo.png" alt="logo"  className='h-20 w-40'/> */}
                     <BazaarXLogo height={30} />
-                    <p className="max-w-102.5 mt-6">Wde deliver fresh groceries and snacks straight to your door. Trusted by thousands , we aim to make your shopping experience simple and affordable.</p>
+                    <p className="max-w-102.5 mt-6">We deliver fresh groceries and snacks straight to your door. Trusted by thousands , we aim to make your shopping experience simple and affordable.</p>
                 </div>
                 <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
                     {footerLinks.map((section, index) => (
