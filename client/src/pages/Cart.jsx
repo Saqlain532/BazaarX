@@ -50,7 +50,6 @@ const placeOrder = async ()=>{
         // Place order with COD 
         if(payementOption==="COD"){
             const {data} = await axios.post('/api/order/cod', {
-                userId: user._id,
                 items: cartArray.map(item =>( {
                     product: item._id, quantity: item.quantity
                 })),
@@ -70,7 +69,6 @@ const placeOrder = async ()=>{
             //Place order with Stripe 
 
             const {data} = await axios.post('/api/order/stripe', {
-                userId: user._id,
                 items: cartArray.map(item =>( {
                     product: item._id, quantity: item.quantity
                 })),
